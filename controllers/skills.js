@@ -2,7 +2,9 @@ import * as skillsDb from "../data/skills-db.js"
 
 export {
 	index,
-    show
+  show, 
+  newSkills as new,
+  create
 }
 
 function index(req, res) {
@@ -22,3 +24,14 @@ function show(req, res) {
       })
     })
   }
+
+function newSkills(req,res){
+  res.render('skills/new')
+}
+
+function create(req,res){
+  console.log(req.body)
+  skillsDb.create(req.body, function(error, skill){
+    res.redirect('/skills')
+  })
+}
