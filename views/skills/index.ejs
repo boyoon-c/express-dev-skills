@@ -15,7 +15,7 @@
         <ul>
           <% skills.forEach(function(skill) { %>
             <li>
-              <a href="/skills/<%= skill._id %>"><%=skill.text%></a>
+              <a href="/skills/<%= skill._id %>"><%=skill.skill%></a>
                 - 
               <%= skill.learned ? 'learned' : 'not learned' %>
             </li>

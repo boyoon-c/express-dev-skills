@@ -5,9 +5,9 @@ export{
 }
 
 const skills = [
-    {skill: "Javascript", learned: true, _id: 123111},
-    {skill: "HTML", learned: false, _id: 123444},
-    {skill: "CSS", learned: false, _id: 123485}
+    {skill: "Javascript", learned: true, _id: 1},
+    {skill: "HTML", learned: false, _id: 2},
+    {skill: "CSS", learned: false, _id: 3}
 ]
 
 const find = (conditions, callback) => {
