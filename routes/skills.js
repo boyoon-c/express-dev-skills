@@ -1,11 +1,25 @@
 import { Router } from 'express'
+//import * as skillsDb from '../data/skills-db.js'
 const router = Router()
+import * as skillsCtrl from "../controllers/skills.js"
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource')
-})
 
 export {
   router
 }
+
+router.get('/', skillsCtrl.index)
+router.get('/:id', skillsCtrl.show)
+
+
+router.get('/skills', function(req, res) {
+  skillsDb.find({}, function(error, skills) {
+    res.render('skills/index', {
+      skills,
+      error
+    })
+  })
+})
+
+
+

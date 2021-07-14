@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <body>
+        <h1>Skills</h1>
+        <% if(error) { %>
+          <h2><%= error %></h2>
+        <% } %>
+        <ul>
+          <% skills.forEach(function(skill) { %>
+            <li>
+              <a href="/skills/<%= skill._id %>"><%=skill.text%></a>
+                - 
+              <%= skill.learned ? 'learned' : 'not learned' %>
+            </li>
+          <% }) %>
+        </ul>
+      </body>
 </body>
 </html>
