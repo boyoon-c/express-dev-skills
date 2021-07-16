@@ -4,7 +4,13 @@ export {
 	index,
   show, 
   newSkills as new,
-  create
+  create, 
+  deleteSkill as delete
+}
+function deleteSkill(req,res){
+  skillsDb.findByIdAndDelete(req.params.id, function(error, skill){
+    res.redirect('/skills')
+  })
 }
 
 function index(req, res) {

@@ -4,6 +4,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
+import methodOverride from 'method-override'
 
 import { router as indexRouter } from './routes/index.js'
 import { router as skillsRouter } from './routes/skills.js'
@@ -27,6 +28,7 @@ app.use(
   )
 )
 
+app.use(methodOverride('_method'))
 app.use('/', indexRouter)
 app.use('/skills', skillsRouter)
 

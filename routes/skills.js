@@ -12,6 +12,7 @@ router.get('/', skillsCtrl.index)
 router.get('/:id', skillsCtrl.new)
 router.post('/', skillsCtrl.create)
 router.get('/:id', skillsCtrl.show)
+router.delete('/:id', skillsCtrl.delete)
 
 router.get('/skills', function(req, res) {
   skillsDb.find({}, function(error, skills) {

@@ -1,7 +1,8 @@
 export{
     find,
     findById, 
-    create
+    create,
+    findByIdAndDelete
 }
 
 const skills = [
@@ -22,18 +23,18 @@ const find = (conditions, callback) => {
     }
   }
 
-/*
+
   function findByIdAndDelete(id, callback) {
     try { 
-      const idx = todos.findIndex(todo => todo._id == parseInt(id))
-      const deletedTodo = todos.splice(idx, 1)
-      if (!deletedTodo.length ) throw new Error ('No todo was deleted')
-      return callback(null, deletedTodo[0])
+      const idx = skills.findIndex(skill => skill._id == parseInt(id))
+      const deletedSkill = skills.splice(idx, 1)
+      if (!deletedSkill.length ) throw new Error ('No todo was deleted')
+      return callback(null, deletedSkill[0])
     } catch(error) {
       return callback(error, null)
     }
   }
-  */
+  
   
   function create(skill, callback) {
     skill._id = Date.now() % 1000000
